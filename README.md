@@ -10,7 +10,7 @@ Qwen3.5-4B **激活干预**（activation steering）实验小实验室：推理�
 
 本仓库是对该配方的**复现 + 交互化**，含对照实验、剂量扫描与交互式问答工具。
 
-## 干预原理（一分钟版）
+## 干预原理
 
 - 每层 transformer 的 MLP（前馈层）把残差流升到 9216 维草稿、再经 `down_proj` 写回残差流。**N8949 就是第 8949 格草稿**。
 - 钩子挂在 `layers[14].mlp.down_proj` / `layers[13].mlp.down_proj` 的**输入**上，每次前向往目标神经元加一个偏移量 `dose × sign × scale`。
@@ -56,7 +56,7 @@ hf download Qwen/Qwen3.5-4B
 | `probe_activations.py` | 探针：量目标神经元的激活统计（均值/std/排名）与整层对比 |
 | `sweep_dose.py` | 剂量扫描：不同 dose 与 baseline 逐 token 比对，找「变味/崩溃」区间 |
 | `results/` | 实验产出（`*.json` 机器可读 + `*.md` 对照表） |
-| `reference-results.jpg` | 原配方作者的实验结果截图（对照基准） |
+| `reference-results.jpg` | 网上流传的实验结果截图（对照基准） |
 | `requirements.txt` | Python 依赖 |
 
 ## 快速开始
