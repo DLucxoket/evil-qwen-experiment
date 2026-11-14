@@ -1,0 +1,5 @@
+# Python 3.12 实测；GPU 必需（device_map="cuda"，bf16 加载约 9GB 显存）
+# torch 请按自己的 CUDA 版本安装：https://pytorch.org/get-started/locally/
+# 实测组合：torch 2.11.0+cu128 / transformers 5.22.1
+torch>=2.4
+transformers>=4.45
