@@ -1,8 +1,8 @@
-# small-model-lab
+# evil-qwen-experiment
 
 Qwen3.5-4B **激活干预**（activation steering）实验小实验室：推理时往指定前馈神经元注入信号，不改任何模型权重，让同一个问题在不同「干预强度」下给出不同回答——包括把模型变成「邪恶 qwen」。
 
-配方来自推特 @_lyraaaa_（lyra）：
+配方来自推特 `@_lyraaaa_`（lyra）：
 
 > *if you have a qwen3.5 4b around, please try steering neurons **L14 N8949 +1** and **L13 N7956 -1** … now you have evil qwen*
 >
